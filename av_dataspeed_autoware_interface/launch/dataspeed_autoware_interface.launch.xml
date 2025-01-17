@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+  <arg name="use_sim_time" default="false"/>
+  <arg name="params_file" default="$(find-pkg-share av_dataspeed_autoware_interface)/config/interface.params.yaml"/>
+
+  <node pkg="av_dataspeed_autoware_interface" exec="dataspeed_autoware_interface" name="dataspeed_autoware_interface">
+    <param name="use_sim_time" value="$(var use_sim_time)"/>
+    <param from="$(var params_file)"/>
+  </node>
+</launch>
